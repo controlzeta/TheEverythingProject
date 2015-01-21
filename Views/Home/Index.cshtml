@@ -1,7 +1,29 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = " Little Everything Project";
 }
-@section featured {
+<div class="row">
+    <div class="col-md-12">
+        <h2>Victory Lighting Design & Electrical Design</h2> You need an electical work? We make you an offer you can't refuse.<br /> 
+        @Html.ActionLink("Request a free quote.","RequestAQuote");
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel-default">
+                    <div class="panel-heading">Heading</div>
+                    <div class="panel-body">
+                        Body
+                    </div>
+                    <div class="panel-footer">
+                        Footer
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">2</div>
+            <div class="col-md-4">3</div>
+        </div>
+    </div>
+</div>
+@*@section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
@@ -42,4 +64,4 @@
         and price for your applications.
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
-</ol>
+</ol>*@
