@@ -1,2 +1,59 @@
 ﻿@model TheEverythingProject.Models.RequestAQuoteModels
 
+@{    ViewBag.Title = "Victory Lighting Design & Electrical Design"; } 
+
+<h2>Victory Lighting Design & Electrical Design</h2> 
+You need an electical work? We make you an offer you can't refuse.<br /> 
+
+@Html.ActionLink("Request a free quote.","RequestAQuote");
+
+@{    ViewBag.Title = "Request a Free Quote";
+      List<string> ProjectTypes = new List<string>();
+      ProjectTypes.Add("Electrical Wiring");
+      ProjectTypes.Add("Lamps");
+      ProjectTypes.Add("Tools");
+      // add additional drop down list items here } 
+      }
+
+h2>Request A Quote</h2> 
+@using (Html.BeginForm())
+{    
+    @Html.ValidationSummary()    
+        <fieldset>        
+            <legend>Request Quote Form</legend>        
+            <ol>            
+                <li>                
+                    @Html.LabelFor(m=>m.ProjectType)                
+                    @Html.DropDownListFor(m=>m.ProjectType, new MultiSelectList(ProjectTypes))            
+
+                </li>           
+                 <li>                
+                     @Html.LabelFor(m=>m.ZipCode)                
+                     @Html.EditorFor(m=>m.ZipCode)            
+                 </li>
+                <li>                
+                    @Html.LabelFor(m=>m.ContactName)                
+                    @Html.EditorFor(m=>m.ContactName)            
+
+                </li>            
+                <li>                
+                    @Html.LabelFor(m=>m.DayTimePhone)                
+                    @Html.EditorFor(m=>m.DayTimePhone)            
+
+                </li>            
+                <li>                
+                    @Html.LabelFor(m=>m.Email)                
+                    @Html.EditorFor(m=>m.Email)            
+
+                </li>            
+                <li>                
+                    @Html.LabelFor(m=>m.ProjectDescription)                
+                    @Html.EditorFor(m=>m.ProjectDescription)            
+
+                </li>        
+
+            </ol>        
+            <input type="submit" value="Request Quote" />    
+
+        </fieldset>     
+}

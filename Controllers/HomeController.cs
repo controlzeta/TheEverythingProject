@@ -9,25 +9,39 @@ namespace TheEverythingProject.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(RequestAQuoteModels m)
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
-
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult RequestAQuote(RequestAQuoteModels quote)
-        {
-            try 
-            { 
-                return RedirectToAction("ThankYou");
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                return View("RequestAQuote", m);
             }
+            ModelState.AddModelError("", "Se encontraron algunos campos vacios. Por favor revisa");
+            return View("RequestAQuote", m);
         }
+
+        public ActionResult RequestAQuote(RequestAQuoteModels m)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("RequestAQuote", m);
+            }
+            ModelState.AddModelError("", "Se encontraron algunos campos vacios. Por favor revisa");
+            return View("RequestAQuote", m);
+        }
+
+        //[HttpPost]
+        //public ActionResult RequestAQuote(RequestAQuoteModels quote)
+        //{
+        //    try 
+        //    { 
+        //        //return RedirectToAction("ThankYou");
+        //        return View("RequestAQuote");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         public ActionResult ThankYou()
         {

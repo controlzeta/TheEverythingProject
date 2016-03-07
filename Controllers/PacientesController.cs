@@ -15,8 +15,6 @@ namespace TheEverythingProject.Controllers
 
         public ActionResult Index()
         {
-            PacientesModels Paciente = new PacientesModels();
-            Paciente.CreatePaciente();
             return View();
         }
 
@@ -31,11 +29,11 @@ namespace TheEverythingProject.Controllers
         //
         // GET: /Pacientes/Create
 
-        public ActionResult Create()
+        public ActionResult Create(TheEverythingProject.Models.PacientesModels.Paciente Pax)
         {
-            PacientesModels Paciente = new PacientesModels();
-            Paciente.CreatePaciente();
-            return View("Index");
+            //PacientesModels PaxModels = new PacientesModels();
+            //PaxModels.CreatePaciente(Pax);
+            return View("Create", Pax);
         }
 
         //

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LittleDatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LittleDatabaseModelStoreContainer">
+    <EntitySet Name="Pacientes" EntityType="LittleDatabaseModel.Store.Pacientes" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Pacientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApellidoPaterno" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="ApellidoMaterno" Type="nchar" MaxLength="50" />
+    <Property Name="Telefono" Type="nchar" Nullable="false" MaxLength="10" />
+    <Property Name="Sexo" Type="nchar" Nullable="false" MaxLength="1" />
+  </EntityType>
+</Schema>

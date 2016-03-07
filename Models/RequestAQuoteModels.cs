@@ -12,7 +12,7 @@ namespace TheEverythingProject.Models
     public class RequestAQuoteModels
     {
         [Required]
-        [DisplayName("Type of Project")]
+        [DisplayName("Tipo de Proyecto")]
         public string ProjectType { get; set; }
         [Required]
         [DataType(DataType.PostalCode)]

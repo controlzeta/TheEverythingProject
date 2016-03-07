@@ -1,0 +1,65 @@
+﻿@model TheEverythingProject.Models.PacientesModels.Paciente
+@{
+    ViewBag.Title = "Create";
+    List<string> SexTypes = new List<string>();
+    SexTypes.Add("Masculino");
+    SexTypes.Add("Femnino"); 
+}
+@using (Html.BeginForm())
+    {    
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Crear Paciente</h2>
+            @Html.ValidationSummary()
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    @Html.LabelFor(m=>m.Nombre)       
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    @Html.TextBoxFor(m => m.Nombre, "" ,new { placeholder = "Nombre", cssClass = "form-control"}) 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    @Html.LabelFor(m=>m.ApellidoPaterno)       
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    @Html.TextBoxFor(m => m.ApellidoPaterno, "" ,new { placeholder = "Apellido Paterno", cssClass = "form-control"}) 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    @Html.LabelFor(m=>m.ApellidoMaterno)       
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    @Html.TextBoxFor(m => m.ApellidoMaterno, "" ,new { placeholder = "Apellido Materno", cssClass = "form-control"}) 
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    @Html.LabelFor(m=>m.Telefono)       
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    @Html.TextBoxFor(m => m.Telefono, "" ,new { placeholder = "Telefono", cssClass = "form-control"}) 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    @Html.LabelFor(m=>m.Sexo)       
+                </div>
+                <div class="col-lg-3 col-md-6">
+                     @Html.DropDownListFor(m => m.Sexo, new MultiSelectList(SexTypes), new { cssClass = "form-control"}) 
+                </div>
+            </div>
+            <div>
+                <input type="submit" value="Crear" /> 
+            </div>
+        </div>
+    </div>
+
+  
+           
+  
+      
+   
+}
